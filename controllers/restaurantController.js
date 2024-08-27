@@ -4,19 +4,41 @@ const Restaurant = require('../models/Restaurant');
 // function to create the restaurants
 exports.createRestaurant = async (req, res) => {
   try {
-    const { name, description, latitude, longitude, ratings } = req.body;
-    const restaurant = new Restaurant({
-      name,
-      description,
-      location: { type: 'Point', coordinates: [longitude, latitude] },
-      ratings,
-    });
-    await restaurant.save();
-    res.status(201).json(restaurant);
+    const data = req.body;
+
+    // Check if data is an array (multiple restaurants)
+    if (Array.isArray(data)) {
+      // Create multiple restaurants
+      const restaurants = await Restaurant.insertMany(
+        data.map((restaurant) => ({
+          name: restaurant.name,
+          description: restaurant.description,
+          location: {
+            type: 'Point',
+            coordinates: [restaurant.longitude, restaurant.latitude]
+          },
+          ratings: restaurant.ratings,
+        }))
+      );
+      res.status(201).json({ message: 'Restaurants created successfully', restaurants });
+    } else {
+      // Create a single restaurant
+      const { name, description, latitude, longitude, averageRating, noOfRatings } = data;
+      const restaurant = new Restaurant({
+        name,
+        description,
+        location: { type: 'Point', coordinates: [longitude, latitude] },
+        averageRating,
+        noOfRatings
+      });
+      await restaurant.save();
+      res.status(201).json({ message: 'Restaurant created successfully', restaurant });
+    }
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
 
 // function to fetch all restaurants 
 exports.getAllRestaurants = async (req, res) => {
@@ -62,7 +84,7 @@ exports.UpdateRestaurants = async (req, res) => {
         return res.status(404).json({ message: 'Restaurant not found' });
       }
   
-      res.json(restaurant);
+      res.json({restaurant , msg:'Restaurant Details Updated successfully'});
     } catch (error) {
       res.status(500).json({ message: error.message });
     }

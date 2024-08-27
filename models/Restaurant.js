@@ -7,7 +7,8 @@ const RestaurantSchema = new mongoose.Schema({
     type: { type: String, enum: ['Point'], required: true },
     coordinates: { type: [Number], required: true },
   },
-  ratings: [Number],
+  averageRating: Number,
+  noOfRatings: Number,
 });
 
 RestaurantSchema.index({ location: '2dsphere' });

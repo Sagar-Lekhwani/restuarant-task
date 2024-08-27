@@ -10,13 +10,13 @@ router.post('/create', auth, createRestaurant);
 router.post('/update/:id', auth, UpdateRestaurants);
 
 // delete restaurant route
-router.post('/delete/:id', auth, DeleteRestaurant);
+router.get('/delete/:id', auth, DeleteRestaurant);
 
 // fetch all restaurants route
-router.get('/restaurants', getAllRestaurants);
+router.get('/', getAllRestaurants);
 
 // fetch near by restaurant route
-router.get('/restaurants_by_location', getRestaurantsByLocation);
+router.get('/location', getRestaurantsByLocation);
 
 
 module.exports = router;
