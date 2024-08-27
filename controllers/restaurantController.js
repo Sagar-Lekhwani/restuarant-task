@@ -17,7 +17,8 @@ exports.createRestaurant = async (req, res) => {
             type: 'Point',
             coordinates: [restaurant.longitude, restaurant.latitude]
           },
-          ratings: restaurant.ratings,
+          averageRating,
+          noOfRatings,
         }))
       );
       res.status(201).json({ message: 'Restaurants created successfully', restaurants });
@@ -42,24 +43,35 @@ exports.createRestaurant = async (req, res) => {
 
 // function to fetch all restaurants 
 exports.getAllRestaurants = async (req, res) => {
-    try {
-      const restaurants = await Restaurant.find();
-      res.json(restaurants);
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-  };
+  try {
+    const restaurants = await Restaurant.find();
+    const formattedRestaurants = restaurants.map((restaurant) => ({
+      "Name of restaurant": restaurant.name,
+      "Description of restaurant": restaurant.description,
+      "Location Restaurant": {
+        latitude: restaurant.location.coordinates[1],
+        longitude: restaurant.location.coordinates[0],
+      },
+      "Average Rating of the restaurant": restaurant.averageRating,
+      "No. of Ratings": restaurant.noOfRatings,
+    }));
+    res.json(formattedRestaurants);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 
 // function to get restaurant by location   
 exports.getRestaurantsByLocation = async (req, res) => {
   try {
-    const { latitude, longitude, radius, minimumDistance, maximumDistance } = req.query;
+    const { Latitude, Longitude, Radius, minimumDistance, maximumDistance } = req.query;
     const query = {
       location: {
         $near: {
-          $geometry: { type: 'Point', coordinates: [longitude, latitude] },
+          $geometry: { type: 'Point', coordinates: [Longitude, Latitude] },
           $minDistance: minimumDistance || 0,
-          $maxDistance: radius || maximumDistance,
+          $maxDistance: Radius || maximumDistance,
         },
       },
     };
