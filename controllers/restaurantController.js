@@ -17,8 +17,8 @@ exports.createRestaurant = async (req, res) => {
             type: 'Point',
             coordinates: [restaurant.longitude, restaurant.latitude]
           },
-          averageRating,
-          noOfRatings,
+          averageRating:restaurant.averageRating,
+          noOfRatings:restaurant.noOfRatings,
         }))
       );
       res.status(201).json({ message: 'Restaurants created successfully', restaurants });
@@ -76,11 +76,22 @@ exports.getRestaurantsByLocation = async (req, res) => {
       },
     };
     const restaurants = await Restaurant.find(query);
-    res.json(restaurants);
+    const formattedRestaurants = restaurants.map((restaurant) => ({
+      "Name of restaurant": restaurant.name,
+      "Description of restaurant": restaurant.description,
+      "Location Restaurant": {
+        latitude: restaurant.location.coordinates[1],
+        longitude: restaurant.location.coordinates[0],
+      },
+      "Average Rating of the restaurant": restaurant.averageRating,
+      "No. of Ratings": restaurant.noOfRatings,
+    }));
+    res.json(formattedRestaurants);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
 
 
 // functtion to update restaurant details 
