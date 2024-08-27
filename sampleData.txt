@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Indian Coffee House",
+    "description": "A historic coffee house serving traditional South Indian cuisine.",
+    "latitude": 23.2336,
+    "longitude": 77.4378,
+    "averageRating": 4.2,
+    "noOfRatings": 1200
+  },
+  {
+    "name": "Manohar Dairy and Restaurant",
+    "description": "A popular spot known for its delicious vegetarian dishes and sweets.",
+    "latitude": 23.2438,
+    "longitude": 77.4260,
+    "averageRating": 4.5,
+    "noOfRatings": 1500
+  },
+  {
+    "name": "Bapu Ki Kutia",
+    "description": "A casual dining restaurant offering a variety of Indian vegetarian dishes.",
+    "latitude": 23.2430,
+    "longitude": 77.4351,
+    "averageRating": 4.4,
+    "noOfRatings": 800
+  },
+  {
+    "name": "La Kuchina",
+    "description": "An upscale restaurant specializing in Italian cuisine with a modern touch.",
+    "latitude": 23.2458,
+    "longitude": 77.4124,
+    "averageRating": 4.6,
+    "noOfRatings": 700
+  },
+  {
+    "name": "Sharma and Vishnu Bhojnalaya",
+    "description": "A budget-friendly restaurant known for its homely Indian food.",
+    "latitude": 23.2537,
+    "longitude": 77.4154,
+    "averageRating": 4.1,
+    "noOfRatings": 950
+  },
+  {
+    "name": "Zam Zam Fast Food",
+    "description": "A fast food joint famous for its shawarmas and biryanis.",
+    "latitude": 23.2379,
+    "longitude": 77.4044,
+    "averageRating": 4.3,
+    "noOfRatings": 1100
+  },
+  {
+    "name": "Under the Mango Tree",
+    "description": "A cozy cafe offering organic meals and fresh juices.",
+    "latitude": 23.2473,
+    "longitude": 77.4333,
+    "averageRating": 4.7,
+    "noOfRatings": 600
+  },
+  {
+    "name": "Sagar Gaire",
+    "description": "A chain restaurant popular for its sandwiches and fast food options.",
+    "latitude": 23.2445,
+    "longitude": 77.4171,
+    "averageRating": 4.0,
+    "noOfRatings": 1300
+  },
+  {
+    "name": "Raw the Restrobar by Chef AJ",
+    "description": "A modern restaurant offering a fusion of global cuisines.",
+    "latitude": 23.2304,
+    "longitude": 77.4110,
+    "averageRating": 4.6,
+    "noOfRatings": 900
+  },
+  {
+    "name": "Jehan Numa Palace - Shahnama",
+    "description": "A fine dining restaurant offering exquisite North Indian cuisine.",
+    "latitude": 23.2308,
+    "longitude": 77.4129,
+    "averageRating": 4.8,
+    "noOfRatings": 450
+  },
+  {
+    "name": "Greek Food & Beyond",
+    "description": "A Mediterranean restaurant known for its authentic Greek dishes.",
+    "latitude": 23.2354,
+    "longitude": 77.4000,
+    "averageRating": 4.5,
+    "noOfRatings": 500
+  },
+  {
+    "name": "Raju Tea Stall",
+    "description": "A local favorite for chai and snacks, especially the poha-jalebi combo.",
+    "latitude": 23.2437,
+    "longitude": 77.4140,
+    "averageRating": 4.2,
+    "noOfRatings": 1600
+  },
+  {
+    "name": "Café Chokolade",
+    "description": "A dessert cafe specializing in chocolate-based treats.",
+    "latitude": 23.2520,
+    "longitude": 77.4208,
+    "averageRating": 4.4,
+    "noOfRatings": 850
+  },
+  {
+    "name": "10 Downing Street",
+    "description": "A British-style pub offering a variety of drinks and pub food.",
+    "latitude": 23.2342,
+    "longitude": 77.4339,
+    "averageRating": 4.3,
+    "noOfRatings": 700
+  },
+  {
+    "name": "Hakeem's Restaurant",
+    "description": "A well-known restaurant serving authentic Mughlai cuisine.",
+    "latitude": 23.2403,
+    "longitude": 77.4094,
+    "averageRating": 4.6,
+    "noOfRatings": 1200
+  }
+]
